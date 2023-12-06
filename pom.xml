@@ -79,17 +79,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-		</dependency>
 
-		<!-- <dependency>
+		 <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-docker-compose</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
-		</dependency> -->
+		</dependency>
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -183,7 +179,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
-					<useJUnitPlatform>true</useJUnitPlatform>
+				<!--	<useJUnitPlatform>true</useJUnitPlatform>   -->
 				</configuration>
 			</plugin>
 			<plugin>
@@ -192,6 +188,25 @@
 				<version>3.2.0</version>
 				<configuration>
 					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.13</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+					<imageName>davidMorales/plataforma:${project.version}</imageName>
+					<dockerfile>${project.basedir}/src/main/docker/Dockerfile</dockerfile>
+					<!-- Otras configuraciones -->
 				</configuration>
 			</plugin>
 		</plugins>

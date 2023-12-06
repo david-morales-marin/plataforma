@@ -11,7 +11,7 @@ public class OpenAPIConfiguration {
     @Bean
     public OpenAPI openAPI() {
         return new OpenAPI()
-                .addServersItem(new Server().url("http://localhost:8080"));
+                .addServersItem(new Server().url("http://localhost:8080/**")); //ACÁ SE DEBERÍA DE PONER LA URL DEL DESPLIEGUE.
     }
 
 }

@@ -1,0 +1,6 @@
+FROM openjdk:17-jdk-alpine
+EXPOSE 8080
+ADD ./build/libs/plataforma.jar plataforma.jar
+ENTRYPOINT ["java", "-jar", "/plataforma.jar"]
+
+

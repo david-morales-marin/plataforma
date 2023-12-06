@@ -15,3 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
         bearerFormat = "JWT"
 )
 public class SwaggerConfig{ }
+
+//Pensaba documentarlo con Swagger y generar la documentación para pasarles la url del Swagger pero la verdad
+//no me dio el tiempo.

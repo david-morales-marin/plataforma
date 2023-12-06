@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
+
+    String sql = "SELECT * FROM public.\"Session\" WHERE id ?";
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var usuario = getById(username);

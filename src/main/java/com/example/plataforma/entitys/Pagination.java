@@ -11,8 +11,6 @@ public class Pagination {
 
     private int total_Elements;
 
-    private List<Users> content;
-
     public Pagination() {
     }
 
